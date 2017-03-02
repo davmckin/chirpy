@@ -5,4 +5,6 @@ Rails.application.routes.draw do
       resources :messages, only: [:index]
   end
 
+  post '/login' => 'sessions#create'
+
 end
