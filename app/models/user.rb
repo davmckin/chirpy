@@ -8,7 +8,7 @@ class User < ApplicationRecord
   acts_as_mentionable
   acts_as_mentioner
 
-  has_many :chirps
+  has_many :chirps, dependent: :destroy
 
   validates :name, presence: true
   validates :username, presence: true

@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   end
 
   post '/login' => 'sessions#create'
-
+  post '/follow/:id' => 'follow#follow'
+  post '/unfollow/:id' => 'follow#unfollow'
 end
