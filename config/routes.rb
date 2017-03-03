@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   resources :chirps
-  resources :users
   resources :users do
-      resources :messages, only: [:index]
+      resources :chrips, only: [:index]
   end
 
   post '/login' => 'sessions#create'

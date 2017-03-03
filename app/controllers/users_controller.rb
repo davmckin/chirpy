@@ -14,13 +14,14 @@ class UsersController < ApplicationController
     end
   end
 
+  # def show
+  #
+  # end
 
   private
 
   def user_params
-    params.permit(:username, :name, :password, :url)
+    params.permit(:username, :name, :password, :url, :password_confirmation)
   end
-
-
 
 end
