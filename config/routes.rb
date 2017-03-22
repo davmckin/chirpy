@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   post '/follow/:id' => 'follow#follow'
   post '/unfollow/:id' => 'follow#unfollow'
 
-  root 'chrips#index'
+  root 'chirps#index'
 end
