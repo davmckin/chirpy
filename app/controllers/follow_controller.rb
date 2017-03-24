@@ -3,16 +3,15 @@ class FollowController < ApplicationController
   before_action :require_user
 
   def follow
-    user = User.find(params[:id])
+    user = User.find_by(id: params[:id])
     current_user.follow!(user)
-    #needs to add followed person's chirps to chirps timeline
+    render json: ["#{current_user.username} is now following #{user.username}."]
   end
 
   def unfollow
-    user = User.find(params[:id])
+    user = User.find_by(id: params[:id])
     current_user.unfollow!(user)
-    #needs to remove unfollowed person's chirps from chirp timeline
+    render json: ["#{current_user.username} unfollowed #{user.username}."]
   end
-
 
 end
